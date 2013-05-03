@@ -1,0 +1,53 @@
+# User dependent .bashrc file
+# See .bashrc.old for other potential changes
+
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+# Interactive operation...
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Default to human readable figures
+#alias df='df -h'
+#alias du='du -h'
+
+# Misc :)
+# alias less='less -r'                          # raw control characters
+# alias whence='type -a'                        # where, of a sort
+alias grep='grep --color'                     # show differences in colour
+alias egrep='egrep --color=auto'              # show differences in colour
+alias fgrep='fgrep --color=auto'              # show differences in colour
+
+# Some shortcuts for different directory listings
+alias ls='ls -hF --color'                 # classify files in colour
+alias dir='ls --color=auto --format=vertical'
+alias vdir='ls --color=auto --format=long'
+alias ll='ls -laF'                              # long list
+alias la='ls -A'                              # all but . and ..
+alias l='ls -Fl'                              #
+
+# Run sudo vim and skip creation of swap files
+alias svim='sudo vim -n'
+
+# User added changes
+# alias gitr='cd /cygdrive/c/Users/brad/Documents/Programming/git'
+
+# Makes dircolors use ~/.dircolors to determine colors used by 'ls'
+d=~/.dircolors
+test -r $d && eval "$(dircolors $d)"
+
+# Python path
+# Added this one because it was not being included in the default path for some
+# reason
+# export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+
+# Activate pig virtual python environment
+alias dragon='source ~/dragon/bin/activate'
+
+# Use distribute in any virtual environment
+export VIRTUALENV_DISTRIBUTE=true
+
+# Use 256 color
+#export TERM="xterm-256color"

@@ -1,0 +1,8 @@
+[user]
+	name = Bradley Tse
+	email = bradleytse@gmail.com
+
+[core]
+    editor = /usr/bin/vim
+[merge]
+	tool = vimdiff
