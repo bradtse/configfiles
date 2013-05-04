@@ -3,7 +3,7 @@ configfiles
 
 These are a few of my more important configuration files.
 
-Directions: 
+Directions:
 
 1. Add file you want to keep track of into configfiles root directory. I recommend not using any dot names so that
    the file is not hidden.
