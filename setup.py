@@ -10,7 +10,6 @@
 
 import os
 import sys
-import argparse
 
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 CONFIG_FILE = os.path.join(SCRIPT_DIR, "configlist.txt")
@@ -42,22 +41,21 @@ def scan_config_list():
 # Create the symbolic links
 # config: file name in the configfiles folder
 # path: path of symbolic link
-def create_link(config, path, args):
+def create_link(config, path):
     config_path = os.path.join(SCRIPT_DIR, config)
     install_path = os.path.expanduser(path)
     if os.path.exists(install_path):
-        if args.ask:
-            while(True):
-                ans = raw_input("overwrite {0}? (y/n) ".format(install_path))
-                if ans == "y" or ans == "Y":
-                    print("creating symlink from {0} to {1}".format(
-                          install_path, config_path))
-                    os.remove(install_path)
-                    os.symlink(config_path, install_path)
-                    break
-                elif ans == "n" or ans == "N":
-                    print("skipping")
-                    break
+        while(True):
+            ans = raw_input("overwrite {0}? (y/n) ".format(install_path))
+            if ans == "y" or ans == "Y":
+                print("creating symlink from {0} to {1}".format(
+                      install_path, config_path))
+                os.remove(install_path)
+                os.symlink(config_path, install_path)
+                break
+            elif ans == "n" or ans == "N":
+                print("skipping")
+                return
     else:
         while(True):
             ans = raw_input("create symlink for {0}? (y/n) ".format(
@@ -74,20 +72,9 @@ def create_link(config, path, args):
 
 def main():
 
-    parser = argparse.ArgumentParser(description="Install config files")
-    parser.add_argument('-a', '--ask', 
-                        action="store_true",
-                        help="Prompt for replacement if file exists. Default: "
-                             "skips it.")
-    parser.add_argument('-f', '--force',
-                        action="store_true",
-                        help="Overwrite any pre-existing config files without "
-                             "prompting")
-    args = parser.parse_args()
-
     config_dict = scan_config_list()
     for config, path in config_dict.iteritems():
-        create_link(config, path, args)
+        create_link(config, path)
 
     print("script succesful")
 
