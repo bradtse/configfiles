@@ -11,4 +11,4 @@ Directions:
    configlists.txt.
 3. Run setup.py.
 
-NOTE: You can also keep track of full directories also.
+NOTE: You should also be able to keep track of full directories.
