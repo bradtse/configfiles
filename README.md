@@ -10,3 +10,5 @@ Directions:
 2. Enter entry into the configlists.txt file. Examples can be found in
    configlists.txt.
 3. Run setup.py.
+
+NOTE: You can also keep track of full directories also.
