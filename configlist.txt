@@ -1,6 +1,6 @@
 # This is the config list that the python script parses. When adding a new
 # config to this folder, make sure to add a new entry to this file. Make sure
-# tof follow the format of the other entries.
+# to follow the format of the other entries.
 # format: config_name:install_path
 ackrc:~/.ackrc
 bashrc:~/.bashrc
