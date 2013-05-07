@@ -6,3 +6,7 @@
     editor = /usr/bin/vim
 [merge]
 	tool = vimdiff
+[color]
+	ui = true
+[github]
+	user = bradtse
