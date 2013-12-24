@@ -9,4 +9,4 @@ dircolorsrc:~/.dircolors
 gitconfig:~/.gitconfig
 terminatorconfig:~/.config/terminator/config
 vimrc:~/.vimrc
-zshrc;~/.zshrc
+zshrc:~/.zshrc
