@@ -10,8 +10,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Default to human readable figures
-#alias df='df -h'
-#alias du='du -h'
+alias df='df -h'
+alias du='du -h'
 
 # Misc :)
 # alias less='less -r'                          # raw control characters
@@ -21,9 +21,7 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 
 # Some shortcuts for different directory listings
-alias ls='ls -hF --color'                 # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
+alias ls='ls -hF -G'                 # classify files in colour
 alias ll='ls -laF'                              # long list
 alias la='ls -A'                              # all but . and ..
 alias l='ls -Fl'                              #
@@ -35,19 +33,29 @@ alias svim='sudo vim -n'
 # alias gitr='cd /cygdrive/c/Users/brad/Documents/Programming/git'
 
 # Makes dircolors use ~/.dircolors to determine colors used by 'ls'
-d=~/.dircolors
-test -r $d && eval "$(dircolors $d)"
+# d=~/.dircolors
+# test -r $d && eval "$(dircolors $d)"
 
 # Python path
 # Added this one because it was not being included in the default path for some
 # reason
 # export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 
-# Activate pig virtual python environment
+###############################################################################
+# Aliases for python virtual environments
+###############################################################################
+
 alias dragon='source ~/dragon/bin/activate'
+alias activate-webserver='source ~/webserver-brad/bin/activate'
 
 # Use distribute in any virtual environment
-export VIRTUALENV_DISTRIBUTE=true
+# export VIRTUALENV_DISTRIBUTE=true
 
 # Use 256 color
-#export TERM="xterm-256color"
+# export TERM="xterm-256color"
+export EDITOR=/usr/bin/vim
+
+# Improved terminal prompt
+export PS1="\u@\h[\w]$ "
+
+# au BufRead,BufNewFile bash-fc-* set filetype=sh

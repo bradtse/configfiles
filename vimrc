@@ -36,11 +36,11 @@ Bundle 'fholgado/minibufexpl.vim'
 " Buffer tabs
 "Bundle 'vim-scripts/TabBar'
 " Tab complete
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 " HTML tag matching
 Bundle 'Valloric/MatchTagAlways'
 " Sexy status line
-Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Lokaltog/vim-powerline'
 " Git plugin
 Bundle 'tpope/vim-fugitive'
 " Solarized color scheme
@@ -53,7 +53,7 @@ Bundle 'zeis/vim-kolor'
 Bundle 'tomasr/molokai'
 
 " Change look of powerline
-let g:Powerline_symbols='unicode'
+" let g:Powerline_symbols='unicode'
 
 " Change look of MatchTagAlways
 let g:mta_use_matchparen_group = 0
@@ -104,11 +104,11 @@ set switchbuf=useopen,usetab " Switch to tab when switching buffers
 """"""""""""""""""""""""""""""""""""""""""""
 
 syntax enable
-set t_Co=256 " Let vim know 256 colors is supported
+"set t_Co=256 " Let vim know 256 colors is supported
 "set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_visibility="high"
-colorscheme kolor
+"colorscheme kolor
 set cursorline " Highlights line the cursor is on
 set novisualbell  " No visual bell
 set title " Set the title
@@ -120,8 +120,8 @@ set listchars=tab:▶\ ,eol:⤦,trail:☠ " Fancy list chars. set list must be o
 set textwidth=80 " Enforce 80 char long lines
 set colorcolumn=+1 " Shows 80 char column
 " Highlight anything over 80 chars long
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 
 " Status Line at bottom !! These are being ignored by powerline {
     set laststatus=2 " Always show status bar
@@ -159,8 +159,8 @@ nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <F4> :mksession! ~/.vim/vim_sessions/currsession <cr>
 nnoremap <F5> :so ~/.vim/vim_sessions/currsession <cr>
 " Rebinds ; to :
-nnoremap ; :
-nnoremap : ;
+" nnoremap ; :
+" nnoremap : ;
 " Exit insert mode with jj
 inoremap jj <Esc>
 cmap jj <Esc>
