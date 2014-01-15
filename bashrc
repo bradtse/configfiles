@@ -59,3 +59,10 @@ export EDITOR=/usr/bin/vim
 export PS1="\u@\h[\w]$ "
 
 # au BufRead,BufNewFile bash-fc-* set filetype=sh
+
+# Used to config NASA env for python tools
+source ~/config699/bash_config.sh
+
+# As of now I am only using bash for work, so each time bash is used it will
+# auto activate the py699 python virtualenv
+source ~/virtualenvs/py699/bin/activate

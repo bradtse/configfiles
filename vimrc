@@ -51,6 +51,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'zeis/vim-kolor'
 " Molokai color scheme
 Bundle 'tomasr/molokai'
+" Vim Python auto-complete
+Bundle 'davidhalter/jedi-vim'
 
 " Change look of powerline
 " let g:Powerline_symbols='unicode'
@@ -114,11 +116,11 @@ set novisualbell  " No visual bell
 set title " Set the title
 set nu " Show line numbers
 set hlsearch " Hightlights the search results
-set wrap " Wraps the text to a new line
+"set wrap " Wraps the text to a new line
 set nolist " Do not show invisible characters
 set listchars=tab:▶\ ,eol:⤦,trail:☠ " Fancy list chars. set list must be on
-set textwidth=80 " Enforce 80 char long lines
-set colorcolumn=+1 " Shows 80 char column
+"set textwidth=80 " Enforce 80 char long lines
+"set colorcolumn=+1 " Shows 80 char column
 " Highlight anything over 80 chars long
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
