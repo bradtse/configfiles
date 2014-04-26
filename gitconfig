@@ -4,6 +4,7 @@
 
 [core]
     editor = /usr/bin/vim
+	excludesfile = ~/configfiles/gitignore
 [merge]
 	tool = vimdiff
 [color]
