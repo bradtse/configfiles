@@ -110,7 +110,7 @@ syntax enable
 "set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_visibility="high"
-"colorscheme kolor
+colorscheme kolor
 set cursorline " Highlights line the cursor is on
 set novisualbell  " No visual bell
 set title " Set the title

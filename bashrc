@@ -66,3 +66,17 @@ source ~/config699/bash_config.sh
 # As of now I am only using bash for work, so each time bash is used it will
 # auto activate the py699 python virtualenv
 source ~/virtualenvs/py699/bin/activate
+
+
+
+
+
+
+
+export PATH=$PATH:/Applications/NetBurner/pcbin
+
+export PATH=$PATH:/Applications/NetBurner/gcc-m68k/bin
+
+export NBROOT="/Applications/NetBurner"
+
+export NBROOTMINGW="/Applications/NetBurner"
