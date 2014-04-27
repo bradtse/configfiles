@@ -1,0 +1,2 @@
+# Rename debian ack-grep package to just ack
+sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
