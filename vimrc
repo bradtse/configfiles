@@ -191,9 +191,9 @@ nnoremap <Leader>s o<Esc>
 " Toggle's Vim's paste mode. Good for pasting stuff from other applications.
 set pastetoggle=<F7>
 " Fast saving
-nnoremap <leader>w :w!<CR>
+" nnoremap <leader>w :w!<CR>
 " Fast quit
-nnoremap <leader>q :qa<CR>
+" nnoremap <leader>q :qa<CR>
 " Allows us to save file we don't have permission to. Useful when the file is
 " already open without proper permissions.
 cnoremap w!! w !sudo tee % >/dev/null
