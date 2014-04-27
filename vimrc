@@ -11,15 +11,18 @@
 """"""""""""""""""""""""""""""""""""""""""""
 
 " Needed for Vundle
+" This turns off filetype detection
 filetype off
 
-set rtp+=~/.vim/bundle/vundle
-
+" Determine whether or not the vundle plugin exists
 if filereadable(expand('~/.vim/bundle/vundle/README.md'))
     let g:hasVundle = 1
 endif
 
 if exists('hasVundle')
+
+" Add the vundle path to the runtime path
+set rtp+=~/.vim/bundle/vundle
 
 call vundle#rc()
 
@@ -61,8 +64,6 @@ Bundle 'tomasr/molokai'
 " Vim Python auto-complete
 Bundle 'davidhalter/jedi-vim'
 
-endif
-
 " Change look of powerline
 " let g:Powerline_symbols='unicode'
 
@@ -75,6 +76,8 @@ highlight MatchTag ctermfg=black ctermbg=lightgreen
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['javascript', 'c', 'python'],
                            \ 'passive_filetypes': ['html', 'css'] }
+
+endif
 
 filetype plugin indent on
 
@@ -166,8 +169,6 @@ let mapleader = " " " Sets leader to space key
 " Change viewport scroll size
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-" Bind ,e to NERDTree explore
-nnoremap <Leader>e :NERDTreeToggle<CR>
 " Save and open session hotkeys
 nnoremap <F4> :mksession! ~/.vim/vim_sessions/currsession <cr>
 nnoremap <F5> :so ~/.vim/vim_sessions/currsession <cr>
@@ -201,8 +202,15 @@ nnoremap j gj
 nnoremap k gk
 " Map BufExplorer
 nnoremap <leader>o :BufExplorer<CR>
+
+if exists('hasVundle')
+
+" Bind ,e to NERDTree explore
+nnoremap <Leader>e :NERDTreeToggle<CR>
 " Remap comment toggling. Not sure on this binding.
 noremap qq :call NERDComment(2, 'toggle')<CR>
+
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""
 " Deprecated
