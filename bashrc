@@ -21,10 +21,19 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 
 # Some shortcuts for different directory listings
-alias ls='ls -hF -G'                 # classify files in colour
-alias ll='ls -laF'                              # long list
-alias la='ls -A'                              # all but . and ..
-alias l='ls -Fl'                              #
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls='ls -hF -G'                 # classify files in colour
+    alias ll='ls -laF'                              # long list
+    alias la='ls -A'                              # all but . and ..
+    alias l='ls -Fl'                              #
+elif [ "$(uname)" == "Linux" ]; then
+    alias ls='ls -hF -G --color'                 # classify files in colour
+    alias ll='ls -laF --color'                              # long list
+    alias la='ls -A --color'                              # all but . and ..
+    alias l='ls -Fl --color'                              #
+fi
+
+
 
 # Run sudo vim and skip creation of swap files
 alias svim='sudo vim -n'
@@ -33,8 +42,10 @@ alias svim='sudo vim -n'
 # alias gitr='cd /cygdrive/c/Users/brad/Documents/Programming/git'
 
 # Makes dircolors use ~/.dircolors to determine colors used by 'ls'
-# d=~/.dircolors
-# test -r $d && eval "$(dircolors $d)"
+if [ -f ~/.dircolors ]; then
+    d=~/.dircolors
+    test -r $d && eval "$(dircolors $d)"
+fi
 
 # Python path
 # Added this one because it was not being included in the default path for some
@@ -64,14 +75,14 @@ export PS1="\u@\h[\w]$ "
 # au BufRead,BufNewFile bash-fc-* set filetype=sh
 
 # Used to config NASA env for python tools
-if [ -f "~/config699/bash_config.sh" ]
+if [ -f ~/config699/bash_config.sh ]
 then
     source ~/config699/bash_config.sh
 fi
 
 # As of now I am only using bash for work, so each time bash is used it will
 # auto activate the py699 python virtualenv
-if [ -f "~/virtualenvs/py699/bin/activate" ]
+if [ -f ~/virtualenvs/py699/bin/activate ]
 then
     source ~/virtualenvs/py699/bin/activate
 fi
