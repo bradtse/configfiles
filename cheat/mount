@@ -1,3 +1,12 @@
+# Mount a partition example
+mount /dev/sdb1[device location] /media/two[mount point]
+# May also provide a type
+mount -t ntfs /dev/sdb1[device location] /media/two[mount point]
+# Don't forget to add it to fstab for auto mounting!
+# Both lines are valid methods
+/dev/sdb1 /media/two ntfs-3g user,fmask=0111,dmask=0000 0 0
+UUID=926CEE5A6CEE389D /media/media ntfs-3g  user,fmask=0111,dmask=0000 0 0
+
 # To mount / partition as read-write in repair mode:
 mount -o remount,rw /
 

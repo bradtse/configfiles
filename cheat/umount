@@ -1,0 +1,5 @@
+# Unmount a partition
+sudo umount /dev/sb1 [device location]
+
+# or
+sudo umount /media/two [mount point]
