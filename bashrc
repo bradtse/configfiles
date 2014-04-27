@@ -73,10 +73,10 @@ source ~/virtualenvs/py699/bin/activate
 
 
 
-export PATH=$PATH:/Applications/NetBurner/pcbin
+#export PATH=$PATH:/Applications/NetBurner/pcbin
 
-export PATH=$PATH:/Applications/NetBurner/gcc-m68k/bin
+#export PATH=$PATH:/Applications/NetBurner/gcc-m68k/bin
 
-export NBROOT="/Applications/NetBurner"
+#export NBROOT="/Applications/NetBurner"
 
-export NBROOTMINGW="/Applications/NetBurner"
+#export NBROOTMINGW="/Applications/NetBurner"

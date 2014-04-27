@@ -10,3 +10,4 @@ gitconfig:~/.gitconfig
 terminatorconfig:~/.config/terminator/config
 vimrc:~/.vimrc
 zshrc:~/.zshrc
+cheat:~/.cheat

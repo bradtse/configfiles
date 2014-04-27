@@ -1,0 +1,2 @@
+# Format a filesystem to ntfs
+sudo mkfs -t ntfs <disk path>[/dev/sdb1]

@@ -1,0 +1,5 @@
+# List information about all of the different disks
+sudo fdisk -l
+
+# Create a new disk partition
+sudo fdisk /dev/<disk drive>
