@@ -98,3 +98,9 @@ function activate() {
 #export NBROOT="/Applications/NetBurner"
 
 #export NBROOTMINGW="/Applications/NetBurner"
+
+function lazygit() {
+    git add .
+    git commit -a -m "$@"
+    git push
+}
