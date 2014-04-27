@@ -56,6 +56,8 @@ alias svim='sudo vim -n'
 # export TERM="xterm-256color"
 export EDITOR=/usr/bin/vim
 
+set -o vi
+
 # Improved terminal prompt
 export PS1="\u@\h[\w]$ "
 
