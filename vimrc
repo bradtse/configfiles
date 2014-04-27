@@ -14,6 +14,13 @@
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
+
+if filereadable(expand('~/.vim/bundle/vundle/README.md'))
+    let g:hasVundle = 1
+endif
+
+if exists('hasVundle')
+
 call vundle#rc()
 
 " vundle handle vundle
@@ -53,6 +60,8 @@ Bundle 'zeis/vim-kolor'
 Bundle 'tomasr/molokai'
 " Vim Python auto-complete
 Bundle 'davidhalter/jedi-vim'
+
+endif
 
 " Change look of powerline
 " let g:Powerline_symbols='unicode'
@@ -110,7 +119,9 @@ syntax enable
 "set background=dark
 "let g:solarized_termtrans=1
 "let g:solarized_visibility="high"
-colorscheme kolor
+if exists('hasVundle')
+    colorscheme kolor
+endif
 set cursorline " Highlights line the cursor is on
 set novisualbell  " No visual bell
 set title " Set the title
