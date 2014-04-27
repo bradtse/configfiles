@@ -101,6 +101,6 @@ function activate() {
 
 function lazygit() {
     git add .
-    git commit -a -m "$0"
-    git push "$1"
+    git commit -a -m "$1"
+    git push "$2"
 }
