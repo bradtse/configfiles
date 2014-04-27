@@ -70,3 +70,16 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Used by agnoster theme to hide the username when logged in as the default user
 DEFAULT_USER='brad'
+
+# Makes dircolors use ~/.dircolors to determine colors used by 'ls'
+if [ -f ~/.dircolors ]; then
+    d=~/.dircolors
+    test -r $d && eval "$(dircolors $d)"
+fi
+
+
+bash function function lazygit() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
