@@ -45,8 +45,9 @@ alias svim='sudo vim -n'
 # Aliases for python virtual environments
 ###############################################################################
 
-alias dragon='source ~/dragon/bin/activate'
-alias activate-webserver='source ~/webserver-brad/bin/activate'
+# No longer need these since of the activate trick
+# alias dragon='source ~/dragon/bin/activate'
+# alias activate-webserver='source ~/webserver-brad/bin/activate'
 
 # Use distribute in any virtual environment
 # export VIRTUALENV_DISTRIBUTE=true
@@ -61,17 +62,21 @@ export PS1="\u@\h[\w]$ "
 # au BufRead,BufNewFile bash-fc-* set filetype=sh
 
 # Used to config NASA env for python tools
-source ~/config699/bash_config.sh
+if [ -f "~/config699/bash_config.sh" ]
+then
+    source ~/config699/bash_config.sh
+fi
 
 # As of now I am only using bash for work, so each time bash is used it will
 # auto activate the py699 python virtualenv
-source ~/virtualenvs/py699/bin/activate
+if [ -f "~/virtualenvs/py699/bin/activate" ]
+then
+    source ~/virtualenvs/py699/bin/activate
+fi
 
-
-
-
-
-
+function activate() {
+    source ~/virtualenvs/$1/bin/activate
+}
 
 #export PATH=$PATH:/Applications/NetBurner/pcbin
 
