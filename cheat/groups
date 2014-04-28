@@ -1,0 +1,8 @@
+# Display all groups for the current user
+groups
+
+# Display all groups for the given user
+groups <user-name>
+
+# Display all groups
+cut -d: -f1 /etc/group

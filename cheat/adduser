@@ -1,0 +1,5 @@
+# Add a new users
+sudo adduser <user-name>
+
+# Add a user to a group
+sudo adduser <user-name> <group>
