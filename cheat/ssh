@@ -1,3 +1,12 @@
+# Create an ssh tunnel to another remote host
+# Now all traffic on the current machine that uses port 2222
+# will be forwarded to example.com, and then forwarded to google.com on port 80
+ssh -L 2222:google.com:80 user@example.com
+
+# Same as above, except this time the traffic will just be sent to port 35000
+# on the remote machine
+ssh -L 2222:localhost:3500 user@example.com
+
 # To ssh via pem file (which normally needs 0600 permissions):
 ssh -i /path/to/file.pem user@example.com
 

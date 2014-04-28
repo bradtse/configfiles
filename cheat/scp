@@ -1,3 +1,9 @@
+# To copy a file from your local machine to a remote server, through an intermediate server
+# Establish the ssh tunnel
+ssh -L 12345:remote2:22 user1@remote1
+# Move the file
+scp -P 12345 file user2@localhost:location
+
 # To copy a file from your local machine to a remote server:
 scp foo.txt user@example.com:remote/dir
 
