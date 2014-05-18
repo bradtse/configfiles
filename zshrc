@@ -83,3 +83,10 @@ bash function function lazygit() {
     git commit -a -m "$1"
     git push
 }
+
+local osname=$(uname) 2>/dev/null
+if [ $osname = "Darwin" ]; then
+    alias xtunnel='java -jar ~/xina_tunnel/xina_tunnel_console.jar ~/xina_tunnel/host_dev.properties ~/xina_tunnel/devel_dev.key root'
+    alias xdown='cd ~/labcode/xina/xina_downloader/'
+    alias devsim='cd ~/labcode/qt4/momadevsim/'
+fi
