@@ -1,0 +1,8 @@
+# Show the log files for a specific user
+svn log | sed -n '/USERNAME/,/-----$/ p'
+
+# Do a dry run for update
+svn merge --dry-run -r BASE:HEAD .
+
+# Use vim to diff (adds colors)
+svn diff | vim -R -
