@@ -6,3 +6,68 @@ svn merge --dry-run -r BASE:HEAD .
 
 # Use vim to diff (adds colors)
 svn diff | vim -R -
+
+# Create a new repository
+mkdir /path/to/new/dir
+svnadmin create /path/to/new/dir
+
+# Import project into svn repo
+svn import -m "msg" svn://url/to/trunk
+
+# Create directory in svn repo
+svn mkdir -m "msg" svn://url/to/path
+
+# Branching (path may also be a url)
+svn copy /path/to/dir /path/to/branch -m "Msg"
+
+# Checkout specific revision
+svn co -r7 src dest
+
+##############
+# Diff/Merge #
+##############
+
+# changes in repository
+svn diff -r HEAD filename
+
+# most recent change
+svn diff -r PREV:BASE filename
+svn diff -r 343:344 https://svn.example.com/repos/calc/trunk
+svn merge -r 343:344 http://svn.example.com/repos/calc/trunk
+
+# Rollback
+svn merge -r 100:99 .
+svn commit -m "Rollback msg"
+
+# Edit a dir's ignores
+svn propedit svn:ignore your_dir_name
+
+# Set a dir's ignores
+svn propset svn:ignore "ignore1 ignore2" your_dir_name
+
+# Switch a working copy to another URL
+svn switch --relocate https://server1:/svn/trunk https://server2:/svn/trunk
+
+# Add all unversioned files to working copy
+svn add --force .
+
+# Find all new files, or unversioned files
+svn status | grep "^\?" | awk "{print \$2}"
+
+# Find all changes, ignoring unversioned files
+svn status -uv 2>/dev/null | egrep "^([^\? ]|       \*)"
+
+# Log
+svn log -v filename
+svn log -r6 filename
+svn log --stop-on-copy
+
+# File statuses
+C - conflict
+G - merged our changes with update (locally)
+U - Updated a file
+UU - Update to file AND properties
+M - modified
+A - added
+D - deleted
+
