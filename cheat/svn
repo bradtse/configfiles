@@ -71,3 +71,5 @@ M - modified
 A - added
 D - deleted
 
+# Force commit an unchanged file
+svn propset testproperty 1 <file> # Set a dummy property and then commit

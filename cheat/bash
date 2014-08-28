@@ -12,3 +12,26 @@ in
     2) echo "two found";;
     3*) echo "something beginning with 3 found";;
 esac
+
+# Append redirect
+ls >> file
+
+# Standard sources
+0 - STDIN
+1 - STDOUT
+2 - STDERR
+
+# Pipe STDERR to blackhole
+program 2>/dev/null
+
+# Pipe STDOUT to STDERR
+program >&2
+
+# Pipe STDOUT to file and also STDERR to STDOUT, which redirects to file
+program > file 2>&1
+
+# Run script in debug mode
+set -x
+
+# Test if file exists, if not true then do something else
+test -e filename || do this
