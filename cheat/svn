@@ -73,3 +73,6 @@ D - deleted
 
 # Force commit an unchanged file
 svn propset testproperty 1 <file> # Set a dummy property and then commit
+
+# Commit a property change without commiting the file changes
+svn commit --depth empty . -m "msg"
