@@ -1,0 +1,3 @@
+[submodule "hulkbash"]
+	path = hulkbash
+	url = git@github.com:bradtse/hulkbash.git
