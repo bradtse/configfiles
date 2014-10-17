@@ -188,6 +188,8 @@ nnoremap <C-l> :b#<CR>
 nnoremap <CR> :noh<CR>
 " Adds a space below current line
 nnoremap <Leader>s o<Esc>
+" Close the current buffer without closing the split window
+nmap <silent> <Leader>w :bn\|bd #<CR>
 " Toggle's Vim's paste mode. Good for pasting stuff from other applications.
 set pastetoggle=<F7>
 " Fast saving

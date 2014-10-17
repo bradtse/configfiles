@@ -90,3 +90,5 @@ if [ $osname = "Darwin" ]; then
     alias xdown='cd ~/labcode/xina/xina_downloader/'
     alias devsim='cd ~/labcode/qt4/momadevsim/'
 fi
+
+alias svndiff='svn diff | vim -R -'
