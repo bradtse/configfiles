@@ -13,6 +13,9 @@ svnadmin create /path/to/new/dir
 
 # Import project into svn repo
 svn import -m "msg" svn://url/to/trunk
+# Import a directory into a svn repo. Must explicitly append <project> to
+# create directory.
+svn improt -m "msg" project svn://url/to/repo/<project>
 
 # Create directory in svn repo
 svn mkdir -m "msg" svn://url/to/path
