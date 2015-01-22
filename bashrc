@@ -74,15 +74,15 @@ export PS1="\u@\h[\w]$ "
 
 # au BufRead,BufNewFile bash-fc-* set filetype=sh
 
-# Used to config NASA env for python tools
-if [ -f ~/config699/bash_config.sh ]; then
-    source ~/config699/bash_config.sh
-fi
-
 # As of now I am only using bash for work, so each time bash is used it will
 # auto activate the py699 python virtualenv
 if [ -f ~/virtualenvs/py699/bin/activate ]; then
     source ~/virtualenvs/py699/bin/activate
+fi
+
+# Used to configure NASA env for python tools
+if [ -f ~/config699/bash_config.sh ]; then
+    source ~/config699/bash_config.sh
 fi
 
 function activate() {

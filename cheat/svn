@@ -82,3 +82,9 @@ svn commit --depth empty . -m "msg"
 
 # After manually resolving a conflict, use the following to let SVN know
 svn resolve --accept=working [files]
+
+# Recursively set a property on all directories
+svn propset <svn:property> -R "value"
+
+# Use an ignore file
+svn propset svn:ignore -F <filename> <path>
