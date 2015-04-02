@@ -1,6 +1,9 @@
 # Show the log files for a specific user
 svn log | sed -n '/USERNAME/,/-----$/ p'
 
+# Filter svn log by date
+svn log -r {YEAR-MO-DA}:{YEAR-MO-DA}
+
 # Do a dry run for update
 svn merge --dry-run -r BASE:HEAD .
 
@@ -88,3 +91,7 @@ svn propset <svn:property> -R "value"
 
 # Use an ignore file
 svn propset svn:ignore -F <filename> <path>
+
+# Temporary stash
+svn diff > patch_name.patch; svn revert -R .
+svn patch patch_name.patch OR patch -p0 < patch_name.patch
