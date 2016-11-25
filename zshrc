@@ -92,3 +92,5 @@ if [ $osname = "Darwin" ]; then
 fi
 
 alias svndiff='svn diff | vim -R -'
+
+alias myip='curl ipecho.net/plain ; echo'
