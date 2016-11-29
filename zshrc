@@ -94,3 +94,20 @@ fi
 alias svndiff='svn diff | vim -R -'
 
 alias myip='curl ipecho.net/plain ; echo'
+alias location='curl ipinfo.io/`myip`'
+
+alias fix_shows='filebot -rename * -non-strict --db TheTVDB --format "{n} [{sxe}] {t}"'
+
+bash function function hide() {
+  CURR_DIR=`pwd -P`
+  cd /etc/openvpn
+  sudo openvpn Germany.ovpn 2>/dev/null &
+  cd $CURR_DIR
+}
+
+bash function function tmode() {
+  hide
+  deluge-web -p 44000 &
+}
+
+
